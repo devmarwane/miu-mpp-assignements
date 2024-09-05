@@ -2,7 +2,7 @@ package prob3;
 
 
 
-public class Condo {
+public class Condo extends Property {
 	private Address address;
 	private int numberOfFloors;
 	public Address getAddress() {
