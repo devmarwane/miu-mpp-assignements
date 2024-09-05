@@ -1,7 +1,7 @@
 package prob3;
 
 
-public class Trailer {
+public class Trailer extends Property {
 	private static final double RENT = 500;
 	private Address address;
 	public Address getAddress() {
