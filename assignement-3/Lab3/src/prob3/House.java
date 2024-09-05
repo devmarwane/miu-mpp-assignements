@@ -2,7 +2,7 @@ package prob3;
 
 
 
-public class House {
+public class House extends Property {
 	private double lotSize;
 	private Address address;
 	public Address getAddress() {
