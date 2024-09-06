@@ -16,11 +16,11 @@ public class PersonWithJob {
 
     @Override
     public boolean equals(Object aPersonWithJob) {
-        if (aPersonWithJob == null) return false;
-        if (!(aPersonWithJob instanceof PersonWithJob)) return false;
-        PersonWithJob p = (PersonWithJob) aPersonWithJob;
-        boolean isEqual = this.person.equals(p.person) &&
-                this.getSalary() == p.getSalary();
+        if(aPersonWithJob == null) return false;
+        if(!(aPersonWithJob instanceof PersonWithJob)) return false;
+        PersonWithJob p = (PersonWithJob)aPersonWithJob;
+        boolean isEqual = this.person.getName().equals(p.person.getName()) &&
+                this.getSalary()==p.getSalary();
         return isEqual;
     }
 
@@ -28,8 +28,8 @@ public class PersonWithJob {
         PersonWithJob p1 = new PersonWithJob("Joe", 30000);
         Person p2 = new Person("Joe");
         //As PersonsWithJobs, p1 should be equal to p2
-        System.out.println("p1.equals(p2)? " + p1.person.equals(p2));
-        System.out.println("p2.equals(p1)? " + p2.equals(p1.person));
+        System.out.println("p1.equals(p2)? " + p1.equals(p2));
+        System.out.println("p2.equals(p1)? " + p2.equals(p1));
     }
 	
 }
