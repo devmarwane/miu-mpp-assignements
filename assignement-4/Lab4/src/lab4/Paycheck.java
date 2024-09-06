@@ -9,8 +9,13 @@ public class Paycheck {
     private double medicare;
     private double socialSecurity;
 
-    private Paycheck() {
-
+    public Paycheck(double grossPay, double fica, double state, double local, double medicare, double socialSecurity) {
+        this.grossPay = grossPay;
+        this.fica = fica;
+        this.state = state;
+        this.local = local;
+        this.medicare = medicare;
+        this.socialSecurity = socialSecurity;
     }
 
     public double getGrossPay() {
