@@ -30,13 +30,15 @@ public class Commissioned extends Employee {
     private double commission;
     private double baseSalary;
     List<Order> orderList;
-    public Commissioned(String empId, double commission, double baseSalary, List<Order> orderList ){
+
+    public Commissioned(String empId, double commission, double baseSalary, List<Order> orderList) {
         super(empId);
         this.commission = commission;
         this.baseSalary = baseSalary;
         this.orderList = orderList;
     }
-    public double calcGrossPay(){
+
+    public double calcGrossPay() {
         return 0;
     }
 }

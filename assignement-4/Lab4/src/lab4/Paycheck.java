@@ -9,9 +9,10 @@ public class Paycheck {
     private double medicare;
     private double socialSecurity;
 
-    private Paycheck(){
+    private Paycheck() {
 
     }
+
     public double getGrossPay() {
         return grossPay;
     }
@@ -36,11 +37,12 @@ public class Paycheck {
         return socialSecurity;
     }
 
-    public Paycheck getNetCheck(){
+    public Paycheck getNetCheck() {
         //@todo
         return null;
     }
-    public void print(){
+
+    public void print() {
         /**
          * @// TODO: 6/09/2024  Implement this method
          */
