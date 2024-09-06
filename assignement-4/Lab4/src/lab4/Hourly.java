@@ -10,7 +10,7 @@ public class Hourly extends Employee {
         this.hoursPerWeek = hoursPerWeek;
     }
 
-    public double calcGrossPay() {
-        return 0;
+    public double calcGrossPay(int month, int year) {
+        return this.hourlyWage * this.hoursPerWeek * 4;
     }
 }

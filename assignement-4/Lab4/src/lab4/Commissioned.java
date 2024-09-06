@@ -1,5 +1,6 @@
 package lab4;
 
+import java.time.Month;
 import java.util.List;
 
 public class Commissioned extends Employee {
@@ -38,7 +39,17 @@ public class Commissioned extends Employee {
         this.orderList = orderList;
     }
 
-    public double calcGrossPay() {
-        return 0;
+    public double calcGrossPay(int month, int year) {
+        double commission = 0;
+        for (Order order : this.orderList) {
+            if(order.getDate().getMonth().getValue() == month ||
+                    order.getDate().getYear() == year
+                ){
+                commission+=order.getAmount() * this.commission / 100 ;
+            }
+
+        }
+
+        return  this.baseSalary + commission;
     }
 }

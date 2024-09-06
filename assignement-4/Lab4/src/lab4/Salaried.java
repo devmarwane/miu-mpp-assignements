@@ -8,7 +8,7 @@ public class Salaried extends Employee {
         this.salary = salary;
     }
 
-    public double calcGrossPay() {
-        return 0;
+    public double calcGrossPay(int month, int year) {
+        return this.salary;
     }
 }
