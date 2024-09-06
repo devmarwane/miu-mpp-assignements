@@ -9,6 +9,7 @@ public class Paycheck {
     private double medicare;
     private double socialSecurity;
 
+
     public Paycheck(double grossPay, double fica, double state, double local, double medicare, double socialSecurity) {
         this.grossPay = grossPay;
         this.fica = fica;
@@ -42,14 +43,25 @@ public class Paycheck {
         return socialSecurity;
     }
 
-    public Paycheck getNetCheck() {
-        //@todo
-        return null;
+    public double getNetPay() {
+
+        return this.grossPay - this.fica - this.state - this.local - this.medicare - this.socialSecurity;
     }
 
     public void print() {
-        /**
-         * @// TODO: 6/09/2024  Implement this method
-         */
+        System.out.println("Paystub:");
+        System.out.println("  Gross Pay: " + this.grossPay);
+        System.out.println("  Fica: " + this.fica);
+        System.out.println("  State: " + this.state);
+        System.out.println("  Local: " + this.local );
+        System.out.println("  Medicare: " + this.medicare );
+        System.out.println("  Social Security: " + this.socialSecurity );
+        System.out.println("  NetPay: " + this.getNetPay() );
+
     }
+
+   /* public static void main (String [] args){
+        Paycheck
+    }*/
 }
+;
