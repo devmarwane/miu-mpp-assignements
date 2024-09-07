@@ -7,13 +7,13 @@ public abstract class Employee {
         this.empId = empId;
     }
 
-    public void print() {
-
-    }
 
     public void print(int month, int year) {
-
+        System.out.println("Employee Id: " + empId);
+        Paycheck p = calcCompensation(month, year);
+        p.print();
     }
+
 
     public Paycheck calcCompensation(int month, int year) {
         double grossPay = calcGrossPay(month, year);

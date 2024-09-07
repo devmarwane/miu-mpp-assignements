@@ -56,7 +56,7 @@ public class Paycheck {
         System.out.println("  Local: " + this.local );
         System.out.println("  Medicare: " + this.medicare );
         System.out.println("  Social Security: " + this.socialSecurity );
-        System.out.println("  NetPay: " + this.getNetPay() );
+        System.out.println("NET PAY: " + this.getNetPay() );
 
     }
 

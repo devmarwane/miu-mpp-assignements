@@ -42,8 +42,8 @@ public class Commissioned extends Employee {
     public double calcGrossPay(int month, int year) {
         double commission = 0;
         for (Order order : this.orderList) {
-            if(order.getDate().getMonth().getValue() == month ||
-                    order.getDate().getYear() == year
+            if(order.getDate()!= null && (order.getDate().getMonth().getValue() == month ||
+                    order.getDate().getYear() == year)
                 ){
                 commission+=order.getAmount() * this.commission / 100 ;
             }
