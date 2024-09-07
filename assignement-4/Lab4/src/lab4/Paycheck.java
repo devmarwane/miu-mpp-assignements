@@ -51,11 +51,11 @@ public class Paycheck {
     public void print() {
         System.out.println("Paystub:");
         System.out.println("  Gross Pay: " + this.grossPay);
-        System.out.println("  Fica: " + this.fica);
-        System.out.println("  State: " + this.state);
-        System.out.println("  Local: " + this.local );
-        System.out.println("  Medicare: " + this.medicare );
-        System.out.println("  Social Security: " + this.socialSecurity );
+        System.out.println("  Fica: " + this.fica/this.grossPay);
+        System.out.println("  State: " + this.state/this.grossPay);
+        System.out.println("  Local: " + this.local/this.grossPay);
+        System.out.println("  Medicare: " + this.medicare/this.grossPay);
+        System.out.println("  Social Security: " + this.socialSecurity/this.grossPay );
         System.out.println("NET PAY: " + this.getNetPay() );
 
     }
