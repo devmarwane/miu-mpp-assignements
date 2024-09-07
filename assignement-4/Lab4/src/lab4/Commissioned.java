@@ -1,6 +1,6 @@
 package lab4;
 
-import java.time.Month;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Commissioned extends Employee {
@@ -45,6 +45,9 @@ public class Commissioned extends Employee {
             if(order.getDate().getMonth().getValue() == month-1 &&
                     order.getDate().getYear() == year
                 ){
+            LocalDate lastMonth = LocalDate.of(year,month,1).minusMonths(1);
+            if(order.getDate().getMonthValue() == lastMonth.getMonthValue() &&
+                    order.getDate().getYear() == lastMonth.getYear()){
                 double sm = order.getAmount() * this.commission ;
                 commission+=sm;
             }
