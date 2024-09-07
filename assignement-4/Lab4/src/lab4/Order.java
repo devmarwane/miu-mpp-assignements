@@ -19,4 +19,10 @@ public class Order {
     public double getAmount() {
         return this.amount;
     }
+
+    public boolean belongToMonth( int month, int year){
+        LocalDate lastMonth = LocalDate.of(year,month,1).minusMonths(1);
+        return this.date.getMonthValue() == lastMonth.getMonthValue() &&
+                this.date.getYear() == lastMonth.getYear();
+    }
 }
