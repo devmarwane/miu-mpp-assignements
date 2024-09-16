@@ -1,0 +1,9 @@
+The method removeDuplicates creates a new list(noDupsList) and stores unique data there.
+First, this list is null then added first value of the employee list.
+Then looping the rest of all values of the employee with checking value exists in noDupsList.
+When checking existing it is using the inList method.
+In this method, it is checked with the equals method of the Employee class.
+The problem is the equals method of the Employee class.
+This equals method does not override the Object's method.
+It is getting the Employee object in the parameter. That is incorrect.
+After the change of equals method, the result becomes correct.

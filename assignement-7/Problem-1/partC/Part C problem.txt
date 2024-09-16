@@ -1,0 +1,5 @@
+In this part, removeDuplicates method uses HashMap to compare duplicates.
+But it relies on the equals and hashCode methods for comparisons.
+The problem is hashCode is not overridden in the Employee class.
+Equals have been overridden so hashCode also needs to override.
+So the solution is overriding hashCode on the Employee class.
