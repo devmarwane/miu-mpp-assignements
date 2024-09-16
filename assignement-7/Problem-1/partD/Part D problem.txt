@@ -1,0 +1,5 @@
+In this part, it's also using HashMap and checking correctly.
+But the problem is it's making the visited attribute of Employee true when it is already found.
+After that in the equals method, it checks checking visited attribute. It's incorrect.
+The solution is removing the visited attribute in the equals method.
+And there is another new thing in the hashCode method. It shows different syntax. It's correct too.
