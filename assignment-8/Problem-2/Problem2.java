@@ -3,9 +3,7 @@ package lesson8.lecture.inclassdemo;
 import java.util.*;
 
 public class Problem2 {
-    static enum SortMethod {BYTITLE, BYPRICE}
-
-    ;
+    enum SortMethod {BYTITLE, BYPRICE}
     private SortMethod method;
 
     public static void main(String[] args) {
