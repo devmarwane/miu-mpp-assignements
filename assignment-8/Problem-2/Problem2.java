@@ -3,9 +3,14 @@ package lesson8.lecture.inclassdemo;
 import java.util.*;
 
 public class Problem2 {
+    static enum SortMethod {BYTITLE, BYPRICE}
+
+    ;
+    private SortMethod method;
+
     public static void main(String[] args) {
         List<Product> products = new ArrayList<>(Arrays.asList(
-                new Product("Apple Tablet", 1200.00, 101),
+                new Product("ATablet", 1200.00, 101),
                 new Product("Phone", 800.00, 102),
                 new Product("Tablet", 600.00, 103),
                 new Product("Laptop", 1100.00, 104),
@@ -21,6 +26,53 @@ public class Problem2 {
         System.out.println(products);
 
         // Problem C
+        // By Price
+        Problem2 problem2 = new Problem2();
+        problem2.sort(products, SortMethod.BYPRICE);
+        System.out.println(products);
+        // By Title
+        problem2.sort(products, SortMethod.BYTITLE);
+        System.out.println(products);
 
+        // Problem D If the title is the same, use the model as another attribute to sort it. Do this by using lambdas.
+        // By Price
+        problem2.setMethod(SortMethod.BYPRICE);
+        problem2.sort(products);
+        System.out.println(products);
+
+        // By Title
+        problem2.setMethod(SortMethod.BYTITLE);
+        problem2.sort(products);
+        System.out.println(products);
+    }
+
+    // Problem C
+    public void sort(List<Product> products, final SortMethod method) {
+        class ProductComparator implements Comparator<Product> {
+            @Override
+            public int compare(Product p1, Product p2) {
+                if (method == SortMethod.BYTITLE) {
+                    return p1.title.compareTo(p2.title);
+                } else {
+                    if (p1.price == p2.price) return 0;
+                    else if (p1.price < p2.price) return -1;
+                    else return 1;
+                }
+            }
+        }
+        Collections.sort(products, new ProductComparator());
+    }
+
+    // Problem D
+    public void setMethod(SortMethod method) {
+        this.method = method;
+    }
+
+    public void sort(List<Product> products) {
+        if (method == SortMethod.BYTITLE) {
+            Collections.sort(products, (p1, p2) -> p1.title.compareTo(p2.title));
+        } else if (method == SortMethod.BYPRICE) {
+            Collections.sort(products, (p1, p2) -> Double.compare(p1.price, p2.price));
+        }
     }
 }
