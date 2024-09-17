@@ -4,13 +4,14 @@ import java.util.*;
 
 public class Problem2 {
     enum SortMethod {BYTITLE, BYPRICE}
+
     private SortMethod method;
 
     public static void main(String[] args) {
         List<Product> products = new ArrayList<>(Arrays.asList(
                 new Product("ATablet", 1200.00, 101),
                 new Product("Phone", 800.00, 102),
-                new Product("Tablet", 600.00, 103),
+                new Product("ATablet", 600.00, 103),
                 new Product("Laptop", 1100.00, 104),
                 new Product("Phone", 850.00, 105)
         ));
@@ -67,10 +68,10 @@ public class Problem2 {
     }
 
     public void sort(List<Product> products) {
-        if (method == SortMethod.BYTITLE) {
-            Collections.sort(products, (p1, p2) -> p1.title.compareTo(p2.title));
-        } else if (method == SortMethod.BYPRICE) {
-            Collections.sort(products, (p1, p2) -> Double.compare(p1.price, p2.price));
+        if (method == SortMethod.BYPRICE) {
+            Collections.sort(products, Comparator.comparing(Product::getPrice).thenComparing(Product::getModel));
+        } else if (method == SortMethod.BYTITLE) {
+            Collections.sort(products, Comparator.comparing(Product::getTitle).thenComparing(Product::getModel));
         }
     }
 }
