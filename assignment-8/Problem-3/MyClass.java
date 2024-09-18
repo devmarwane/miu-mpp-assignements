@@ -1,5 +1,7 @@
 package lesson8.lecture.inclassdemo;
 
+import java.util.function.Predicate;
+
 public class MyClass {
     int x;
     String y;
@@ -10,10 +12,11 @@ public class MyClass {
     }
 
     // testing method to check the equality, write a lambda to do this
-    public void myMethod(MyClass cl) {
+    public void myMethod(MyClass c1) {
         // Implement
-
-
+        Predicate<MyClass> predicate = this::equals;
+        System.out.println(predicate.test(c1));
+//        System.out.println(this.equals(c1));
     }
 
     @Override
